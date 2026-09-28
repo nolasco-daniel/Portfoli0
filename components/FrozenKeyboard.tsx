@@ -387,15 +387,15 @@ function makeIconTexture(
 
 const SKILLS = SKILLS_GRID;
 
-const COLS = 5;
-const ROWS = 3;
+const ROWS = SKILLS.length;
+const MAX_COLS = Math.max(...SKILLS.map((row) => row.length));
 const KEYCAP_SIZE = 0.4;
 const KEYCAP_HEIGHT = 0.28;
 const KEYCAP_TOP_SCALE = 0.78;
 const COL_SPACING = 0.42;
 const ROW_SPACING = 0.42;
-const BASE_WIDTH = 2.4;
-const BASE_DEPTH = 1.4;
+const BASE_WIDTH = (MAX_COLS - 1) * COL_SPACING + KEYCAP_SIZE + 0.32;
+const BASE_DEPTH = (ROWS - 1) * ROW_SPACING + KEYCAP_SIZE + 0.32;
 const BASE_HEIGHT = 0.26;
 const ICON_PLANE_SIZE = KEYCAP_SIZE * KEYCAP_TOP_SCALE * 0.78;
 const PRESS_DEPTH = 0.15;
@@ -735,7 +735,7 @@ function Keyboard({ mobile }: { mobile: boolean }) {
     document.body.style.cursor = hoveredKey ? "pointer" : "auto";
     if (hoveredKey) {
       const [row, col] = hoveredKey.split("-").map(Number);
-      playKeyClick(row * COLS + col);
+      playKeyClick(row * MAX_COLS + col);
     }
     return () => {
       document.body.style.cursor = "auto";
@@ -826,11 +826,12 @@ function Keyboard({ mobile }: { mobile: boolean }) {
   const keycapY = BASE_HEIGHT / 2 + KEYCAP_HEIGHT / 2 + 0.005;
   const keycaps = [];
   for (let row = 0; row < ROWS; row++) {
-    for (let col = 0; col < COLS; col++) {
-      const x = (col - (COLS - 1) / 2) * COL_SPACING;
+    const rowSkills = SKILLS[row];
+    for (let col = 0; col < rowSkills.length; col++) {
+      const x = (col - (rowSkills.length - 1) / 2) * COL_SPACING;
       const z = (row - (ROWS - 1) / 2) * ROW_SPACING;
       const id = `${row}-${col}`;
-      const icon = SKILLS[row][col];
+      const icon = rowSkills[col];
       // Phase staggered by grid position so highlighted keys look like a
       // travelling wave rather than a synchronised pulse. Constants tuned
       // by eye --- any non-degenerate combo works, just avoid exact multiples

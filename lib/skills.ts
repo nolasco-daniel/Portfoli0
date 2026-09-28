@@ -1,18 +1,26 @@
 import {
   siCplusplus,
   siCss,
-  siDocker,
-  siFigma,
-  siGit,
+  siExpress,
   siGodotengine,
-  siGooglecloud,
-  siHtml5,
   siJavascript,
   siMysql,
+  siNextdotjs,
   siNodedotjs,
   siPhp,
   siPython,
+  siReact,
+  siTypescript,
+  siVite,
+  siVuedotjs,
 } from "simple-icons";
+
+type SimpleIconSource = {
+  title: string;
+  slug: string;
+  path: string;
+  hex: string;
+};
 
 export type SkillIcon = {
   title: string;
@@ -21,25 +29,40 @@ export type SkillIcon = {
   hex: string;
 };
 
-const siRestApi: SkillIcon = {
-  title: "REST APIs",
-  slug: "rest",
-  path: "M4 5h16v4H4V5zm0 6h10v3H4v-3zm0 5h16v3H4v-3zm12-5h4v3h-4v-3z",
-  hex: "EAF2FB",
+function skill(icon: SimpleIconSource, title = icon.title): SkillIcon {
+  return { title, slug: icon.slug, path: icon.path, hex: icon.hex };
+}
+
+const siJava: SkillIcon = {
+  title: "Java",
+  slug: "java",
+  path: "M8.3 18.7c-2.6.7 1.6 2.1 5.2 1 1.3-.4 2.4-1 2.4-1 .5.5 1.5.8 1.5.8-5.3 2.8-12 .2-9.1-.8zm-1.2-2.2c-2.1.5 1.1 1.7 4 1.2 1.9-.3 3.1-1.1 3.1-1.1.5.5 1.2.7 1.2.7-4.1 2-9.9.2-8.3-.8zM16.6 3.2s-3.6.9-3.8 3.3c-.1 1.7 1.6 2.5 1.6 4.1 0 1.5-1.4 2.4-1.4 2.4s2.4-.7 2.7-2.9c.2-1.8-1.7-2.7-1.6-4.2.1-1.4 2.5-2.7 2.5-2.7zm-5.5.4S8.5 4.9 8.6 6.8c.1 1.4 1.4 2 1.4 3.2s-1.1 1.9-1.1 1.9 2-.5 2.3-2.3c.2-1.5-1.4-2.2-1.3-3.4.1-1.1 1.2-2.6 1.2-2.6zm-5.4 9.8c-.9.8.5 1.6 2.6 1.8 1.6.2 3.8-.1 6.2-.9l-.9.9c-3.1.8-6.4.5-8.1-.3-1.3-.7-.9-1.2.2-1.5zm11.5 8.1c-4 1.9-10.4 1.5-13.2.2 0 0 .7.9 4.5 1.2 5 .5 10.1-.6 10.2-2.5 0 0-.3.5-1.5 1.1z",
+  hex: "F89820",
 };
 
-const siGdscript: SkillIcon = {
-  title: "GDScript",
-  slug: "gdscript",
-  path: "M12 2l7 4v8c0 4-3 7-7 8-4-1-7-4-7-8V6l7-4zm-3 7v6h3.5c1.9 0 3.5-1.3 3.5-3s-1.6-3-3.5-3H9zm2 1.8h1.4c0.9 0 1.6 0.5 1.6 1.2s-0.7 1.2-1.6 1.2H11v-2.4z",
-  hex: "478CBF",
-};
-
-// 3x5 grid consumed by the 3D keyboard and mobile skills grid.
+// 3-row grid consumed by the 3D keyboard and mobile skills grid.
 export const SKILLS_GRID: readonly (readonly SkillIcon[])[] = [
-  [siMysql, siPhp, siJavascript, siRestApi, siPython],
-  [siHtml5, siCss, siNodedotjs, siDocker, siGooglecloud],
-  [siGodotengine, siCplusplus, siGdscript, siFigma, siGit],
+  [
+    skill(siJavascript),
+    skill(siTypescript),
+    skill(siReact),
+    skill(siNextdotjs),
+    skill(siVuedotjs),
+  ],
+  [
+    skill(siVite),
+    skill(siCss),
+    skill(siGodotengine, "Godot"),
+    skill(siNodedotjs),
+    skill(siExpress),
+  ],
+  [
+    siJava,
+    skill(siPhp),
+    skill(siPython),
+    skill(siMysql),
+    skill(siCplusplus),
+  ],
 ] as const;
 
 export const SKILLS_FLAT: readonly SkillIcon[] = SKILLS_GRID.flat();

@@ -34,7 +34,7 @@ export const DICT = {
   },
   hero: {
     greeting: { es: "Hi, I am", en: "Hi, I am" },
-    roleLine: { es: "Jr. Software Developer.", en: "Jr. Software Developer." },
+    roleLine: { es: "Jr. Software Developer", en: "Jr. Software Developer" },
     tagline: {
       es: "Building practical systems for real business and operational problems.",
       en: "Building practical systems for real business and operational problems.",
@@ -81,22 +81,28 @@ export const DICT = {
   },
   keyboard: {
     taglines: {
-      mysql: { es: "Database design, queries, and relational workflows.", en: "Database design, queries, and relational workflows." },
-      php: { es: "Backend development for database-driven systems.", en: "Backend development for database-driven systems." },
-      javascript: { es: "Frontend logic and dynamic browser experiences.", en: "Frontend logic and dynamic browser experiences." },
+      mysql: { es: "Designs relational databases and writes efficient SQL queries.", en: "Designs relational databases and writes efficient SQL queries." },
+      php: { es: "Builds server-rendered pages and database-driven web features.", en: "Builds server-rendered pages and database-driven web features." },
+      javascript: { es: "Builds interactive interfaces and dynamic browser experiences.", en: "Builds interactive interfaces and dynamic browser experiences." },
+      typescript: { es: "Adds type safety and maintainable structure to JavaScript apps.", en: "Adds type safety and maintainable structure to JavaScript apps." },
+      react: { es: "Builds reusable, state-driven user interfaces.", en: "Builds reusable, state-driven user interfaces." },
+      nextdotjs: { es: "Creates full-stack React applications with Next.js.", en: "Creates full-stack React applications with Next.js." },
+      vuedotjs: { es: "Builds reactive, component-based web interfaces.", en: "Builds reactive, component-based web interfaces." },
+      vite: { es: "Provides fast local development and optimized frontend builds.", en: "Provides fast local development and optimized frontend builds." },
       rest: { es: "API integration and client-server communication.", en: "API integration and client-server communication." },
-      python: { es: "Desktop apps, automation, and backend logic.", en: "Desktop apps, automation, and backend logic." },
+      python: { es: "Supports automation, desktop tools, and backend development.", en: "Supports automation, desktop tools, and backend development." },
       html5: { es: "Semantic structure for responsive web pages.", en: "Semantic structure for responsive web pages." },
-      css: { es: "Clean layouts, responsive styling, and UI polish.", en: "Clean layouts, responsive styling, and UI polish." },
-      nodedotjs: { es: "APIs and backend-connected JavaScript tools.", en: "APIs and backend-connected JavaScript tools." },
+      css: { es: "Creates responsive layouts and polished interface styling.", en: "Creates responsive layouts and polished interface styling." },
+      nodedotjs: { es: "Develops server-side logic, APIs, and backend services.", en: "Develops server-side logic, APIs, and backend services." },
+      express: { es: "Builds lightweight web servers and RESTful APIs for Node.js.", en: "Builds lightweight web servers and RESTful APIs for Node.js." },
       docker: { es: "Containerized environments for consistent setup.", en: "Containerized environments for consistent setup." },
       googlecloud: { es: "Cloud platforms explored for app deployment.", en: "Cloud platforms explored for app deployment." },
-      godotengine: { es: "Game scenes, nodes, and gameplay systems.", en: "Game scenes, nodes, and gameplay systems." },
-      cplusplus: { es: "Core programming fundamentals and performance-minded logic.", en: "Core programming fundamentals and performance-minded logic." },
+      godotengine: { es: "Builds 2D game scenes, interactions, and gameplay systems.", en: "Builds 2D game scenes, interactions, and gameplay systems." },
+      java: { es: "Applies object-oriented programming to desktop and backend projects.", en: "Applies object-oriented programming to desktop and backend projects." },
+      cplusplus: { es: "Applies core programming concepts with performance in mind.", en: "Applies core programming concepts with performance in mind." },
       gdscript: { es: "Gameplay scripts for Godot projects.", en: "Gameplay scripts for Godot projects." },
       figma: { es: "Interface planning and UI/UX design work.", en: "Interface planning and UI/UX design work." },
       git: { es: "Version control with Git and GitHub.", en: "Version control with Git and GitHub." },
-      react: { es: "Component-driven web interfaces.", en: "Component-driven web interfaces." },
       tailwindcss: { es: "Fast utility styling for modern dashboards.", en: "Fast utility styling for modern dashboards." },
       sqlite: { es: "Lightweight local database storage for apps and games.", en: "Lightweight local database storage for apps and games." },
     },
@@ -114,4 +120,3 @@ export function translate(path: string, lang: Lang): string {
   if (isLeaf(ref)) return ref[lang] ?? ref.es ?? path;
   return path;
 }
-

@@ -268,7 +268,7 @@ export default function Home() {
 
         <SectionNav />
 
-        <main className="relative z-10 pointer-events-none">
+        <main className="page-main relative z-10 pointer-events-none">
           {/* Hero */}
           <section
             data-kb-section="hero"
@@ -320,11 +320,9 @@ export default function Home() {
                   data-magnetic
                   className="frost-btn"
                   onClick={() =>
-                    document
-                      .querySelector<HTMLElement>(
-                        '[data-kb-section="contact"]'
-                      )
-                      ?.scrollIntoView({ behavior: "smooth", block: "start" })
+                    window.dispatchEvent(
+                      new CustomEvent("section-nav:go-to", { detail: "contact" })
+                    )
                   }
                 >
                   {t("hero.hire")}
