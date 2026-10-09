@@ -6,6 +6,7 @@ import SmoothScroll from "@/components/smooth-scroll";
 import Reveal from "@/components/Reveal";
 import SectionNav from "@/components/SectionNav";
 import CopyEmail from "@/components/CopyEmail";
+import AiChat from "@/components/AiChat";
 import SeasonPicker from "@/components/SeasonPicker";
 import LanguagePicker from "@/components/LanguagePicker";
 import ProjectModal, {
@@ -689,6 +690,7 @@ export default function Home() {
           project={activeProject}
           onClose={() => setActiveProject(null)}
         />
+        <AiChat />
       </div>
     </SmoothScroll>
   );
