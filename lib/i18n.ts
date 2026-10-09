@@ -79,6 +79,25 @@ export const DICT = {
       en: "(c) 2026 Daniel Nolasco. All rights reserved.",
     },
   },
+  chat: {
+    open: { es: "AI Chat", en: "AI Chat" },
+    close: { es: "Close chat", en: "Close chat" },
+    title: { es: "Ask Daniel AI", en: "Ask Daniel AI" },
+    subtitle: {
+      es: "Projects, skills, and contact",
+      en: "Projects, skills, and contact",
+    },
+    placeholder: {
+      es: "Ask about Daniel...",
+      en: "Ask about Daniel...",
+    },
+    send: { es: "Send message", en: "Send message" },
+    thinking: { es: "Thinking...", en: "Thinking..." },
+    error: {
+      es: "Something went wrong. Please try again.",
+      en: "Something went wrong. Please try again.",
+    },
+  },
   keyboard: {
     taglines: {
       mysql: { es: "Designs relational databases and writes efficient SQL queries.", en: "Designs relational databases and writes efficient SQL queries." },

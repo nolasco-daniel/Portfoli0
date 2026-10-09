@@ -715,6 +715,30 @@ body {
   transform: translate(-50%, 0);
 }
 
+/* ─── Custom scrollbar ────────────────────────────────────────────────── */
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(166, 197, 228, 0.3);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(166, 197, 228, 0.5);
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(166, 197, 228, 0.3) transparent;
+}
+
 /* Mobile section navigation mirrors the persistent app-style controls in the
    reference while keeping the longer, desktop section rail unchanged. */
 .mobile-section-nav {
